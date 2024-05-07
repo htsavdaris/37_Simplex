@@ -1,6 +1,13 @@
 import numpy as np
 from scipy.optimize import linprog
 
+#c->Minimize          w = 10*y1 + 15*y2 + 25*y3
+#Subject to:       y1 + y2 + y3 >= 1000
+                  #y1 - 2*y2    >= 0
+#                            y3 >= 340
+#with              y1 >= 0, y2 >= 0
+#pLEASE 
+
 A = np.array([[-1, -1, -1], [-1,2, 0], [0, 0, -1], [-1, 0, 0], [0, -1, 0]])
 b = np.array([-1000, 0, -340, 0, 0])
 c = np.array([10,15,25])
